@@ -1,0 +1,45 @@
+@import url("colors.css");
+@import url("navbar.css");
+@import url("card.css");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap");
+
+body {
+    background: var(--background-color);
+    overflow: hidden;
+    margin: 0;
+    color: var(--color);
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    background: #aaaaaa00;
+    border-radius: 10px;
+    width: 7px;
+    height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #aaaaaa20;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #aaaaaa90;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-corner {
+    display: none;
+}
+
+* {
+    font-family: "Nunito", sans-serif;
+    /* border: 0.1px solid red; */
+}
+
+ion-icon {
+    --ionicon-stroke-width: 16px;
+}
