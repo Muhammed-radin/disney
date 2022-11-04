@@ -1,5 +1,6 @@
 .item-list-heading {
     font-weight: bold;
+    font-size: 15px;
 }
 
 .item-list {
@@ -7,6 +8,10 @@
     padding-bottom: 0.4rem;
     height: 280px;
     position: relative;
+}
+
+.body-contents {
+    margin-top: 0.3rem;
 }
 
 .item-list-box {
@@ -78,10 +83,10 @@
     background-color: transparent;
     padding: 0.2rem;
     border-radius: 10px;
-    min-width: 180px;
-    min-height: 250px;
-    width: 180px;
-    height: 250px;
+    min-width: 140px;
+    min-height: 200px;
+    width: 140px;
+    height: 200px;
     margin: 0.2rem;
     transition: 0.5s;
 }
@@ -99,10 +104,13 @@
 
 @media screen and (max-width: 650px) {
     .item-card {
-        min-width: 140px;
-        min-height: 200px;
-        width: 140px;
-        height: 200px;
+        min-width: 100px;
+        min-height: 140px;
+        width: 100px;
+        height: 140px;
+    }
+    .item-card-box::-webkit-scrollbar {
+        display: none;
     }
     .item-list {
         height: 240px;
