@@ -17,19 +17,4 @@ $$(".scroll-btn-right").forEach(function (v, i) {
     };
 });
 
-function card(appenElem, imgUrl) {
-    var cardCode = `
-    <div class="item-card">
-        <img
-            src="${imgUrl}"
-            alt="item-thub"
-            class="item-thumb"
-        />
-    </div>`;
-    console.log('lo');
-    appenElem.innerHTML += (cardCode);
-}
 
-function cardGroup(title){
-
-}
