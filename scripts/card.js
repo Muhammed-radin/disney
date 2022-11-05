@@ -5,7 +5,10 @@ $$(".scroll-btn-left").forEach(function (v, i) {
         v.parentElement.parentElement.querySelector(
             ".item-card-box"
         ).scrollLeft -= 200;
-        card(v.parentElement.parentElement.querySelector(".item-card-box"), 'https://image.tmdb.org/t/p/w500/8kSerJrhrJWKLk1LViesGcnrUPE.jpg');
+        card(
+            v.parentElement.parentElement.querySelector(".item-card-box"),
+            "https://image.tmdb.org/t/p/w500/8kSerJrhrJWKLk1LViesGcnrUPE.jpg"
+        );
     };
 });
 
@@ -17,4 +20,8 @@ $$(".scroll-btn-right").forEach(function (v, i) {
     };
 });
 
-
+$$(".loading").forEach(function (cards, i) {
+    cards.onload = function () {
+        cards.className = "item-card";
+    };
+});

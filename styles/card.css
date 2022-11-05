@@ -39,6 +39,23 @@
     opacity: 100%;
 }
 
+.loading {
+    background: linear-gradient(145deg, #aaaaaa90, #aaaaaa30) !important;
+    animation: loading 1s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 100px;
+    }
+}
+.loading * {
+    visibility: hidden;
+}
+
 .scroll-btn-left {
     position: absolute;
     top: 50%;
