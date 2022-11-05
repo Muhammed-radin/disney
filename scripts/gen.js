@@ -63,7 +63,7 @@ function addCardGroup(title, innerCrads) {
 // }
 
 async function startHome() {
-    var des = api.discover.replace("page=2", "page=1");
+    var des = api.discover.replace("page=2", "page="+ Math.floor(Math.random() * 10));
     var res = await fetch(des);
     var json = await res.json();
     var results = await json.results;
@@ -74,9 +74,10 @@ async function startHome() {
         cardCode += card(api.imgApi + card1.poster_path);
 
         $$(".item-card-box")[0].innerHTML = cardCode;
+        log(card1)
     });
 
-    var des = api.discover.replace("page=2", "page=2");
+    var des = api.discover.replace("page=2", "page="+ Math.floor(Math.random() * 20));
     var res = await fetch(des);
     var json = await res.json();
     var results = await json.results;
@@ -89,7 +90,7 @@ async function startHome() {
         $$(".item-card-box")[1].innerHTML = cardCode;
     });
 
-    var des = api.discover.replace("page=2", "page=3");
+    var des = api.discover.replace("page=2", "page="+ Math.floor(Math.random() * 30));
     var res = await fetch(des);
     var json = await res.json();
     var results = await json.results;
