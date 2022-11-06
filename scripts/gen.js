@@ -63,6 +63,29 @@ function addCardGroup(title, innerCrads) {
 // }
 
 async function startHome() {
+    var url = await fetch(
+        "https://api.themoviedb.org/3/trending/all/day?api_key=" +
+            api.auth +
+            "&page=" +
+            Math.floor(Math.random() * 10),
+        {
+            headers: {
+                Authorization:
+                    "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwYTZiOTlmOTM5OTcxNzBlNmQyMjA0MDUxN2EzMjMxYyIsInN1YiI6IjYzNjUxNjkwMGQyZjUzMDA5MTk5MmUzZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7RhXL9HLalF6fRl8l3ZmiaCxjcE4gpcvBG7D_qVk_hw",
+            },
+        }
+    );
+    var text = await url.json();
+    console.log(text);
+    setInterval(function () {
+        var rnd = Math.floor(Math.random() * 19);
+        $(".main-thumb").src = api.imgApi + text.results[rnd].backdrop_path;
+        $(".main-thumb-title").innerHTML = text.results[rnd].original_title
+            ? text.results[rnd].original_title
+            : "NO_TITLE_FOUND";
+        $(".main-thumb-over").innerHTML = text.results[rnd].overview;
+    }, 3000);
+
     var des = api.discover.replace("page=2", "page="+ Math.floor(Math.random() * 10));
     var res = await fetch(des);
     var json = await res.json();
@@ -104,6 +127,13 @@ async function startHome() {
     });
 
     log(json);
+
+    $$('.item-card-box').forEach(function (box, i){
+        box.querySelectorAll('.item-card').forEach(function (card, i) {
+            card.$$
+            document.onload = function (e){log(e)}
+        })
+    })
 }
 
 startHome();
