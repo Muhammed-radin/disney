@@ -25,3 +25,12 @@ $$(".loading").forEach(function (cards, i) {
         cards.className = "item-card";
     };
 });
+
+$$(".item-card-box").forEach(function (box, i) {
+
+    box.querySelectorAll(".item-card").forEach(function (card, i) {
+        document.onload = function (e) {
+            log(e);
+        };
+    });
+});

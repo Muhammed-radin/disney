@@ -10,6 +10,19 @@ function log(msg) {
     console.log(msg);
 }
 
+var ___CallCode090 = 0;
+
+function oneTime(callback) {
+    ___CallCode090 += 1;
+    if (___CallCode090 == 1) {
+        if (callback instanceof Function){
+            callback()
+        } else {
+            eval(callback)
+        }
+    }
+}
+
 async function go() {
     // var url = await fetch(
     //     "https://api.themoviedb.org/3/trending/all/day?api_key=" +

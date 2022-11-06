@@ -76,7 +76,7 @@ async function startHome() {
         }
     );
     var text = await url.json();
-    console.log(text);
+
     setInterval(function () {
         var rnd = Math.floor(Math.random() * 19);
         $(".main-thumb").src = api.imgApi + text.results[rnd].backdrop_path;
@@ -86,7 +86,12 @@ async function startHome() {
         $(".main-thumb-over").innerHTML = text.results[rnd].overview;
     }, 3000);
 
-    var des = api.discover.replace("page=2", "page="+ Math.floor(Math.random() * 10));
+    ///////////////////////////////////////////////
+
+    var des = api.discover.replace(
+        "page=2",
+        "page=" + Math.floor(Math.random() * 10)
+    );
     var res = await fetch(des);
     var json = await res.json();
     var results = await json.results;
@@ -97,11 +102,19 @@ async function startHome() {
         cardCode += card(api.imgApi + card1.poster_path);
 
         $$(".item-card-box")[0].innerHTML = cardCode;
-        log(card1)
     });
 
-    var des = api.discover.replace("page=2", "page="+ Math.floor(Math.random() * 20));
-    var res = await fetch(des);
+    ////////////////////////////////////////////////////
+
+    var des = api.discover.replace(
+        "page=2",
+        "page=" + Math.floor(Math.random() * 20)
+    );
+
+    var res = await fetch(
+        "https://api.themoviedb.org/3/trending/all/day?api_key=" + api.auth + '&page=1'
+    );
+
     var json = await res.json();
     var results = await json.results;
 
@@ -113,10 +126,17 @@ async function startHome() {
         $$(".item-card-box")[1].innerHTML = cardCode;
     });
 
-    var des = api.discover.replace("page=2", "page="+ Math.floor(Math.random() * 30));
+    ////////////////////////////////////////////////////
+
+    var des = api.discover.replace(
+        "page=2",
+        "page=" + Math.floor(Math.random() * 30)
+    );
+
     var res = await fetch(des);
     var json = await res.json();
     var results = await json.results;
+    console.log(json);
 
     var cardCode = "";
 
@@ -125,15 +145,6 @@ async function startHome() {
 
         $$(".item-card-box")[2].innerHTML = cardCode;
     });
-
-    log(json);
-
-    $$('.item-card-box').forEach(function (box, i){
-        box.querySelectorAll('.item-card').forEach(function (card, i) {
-            card.$$
-            document.onload = function (e){log(e)}
-        })
-    })
 }
 
 startHome();

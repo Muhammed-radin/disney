@@ -1,0 +1,18 @@
+./card.js 30:
+    var scrollEvt = function (e) {
+        if (e.wheelDeltaY < 0) {
+            box.scrollLeft += 380;
+            $('.item-list-box').style.overflow = 'hidden'
+        } else {
+            box.scrollLeft -= 380;
+            $('.item-list-box').style.overflow = 'hidden'
+        }
+        oneTime(function () {
+            console.log(e);
+        });
+    };
+
+    box.addEventListener("wheel", scrollEvt);
+    window.onmousemove = function (){
+        $('.item-list-box').style.overflow = 'scroll'
+    }

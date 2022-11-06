@@ -45,6 +45,19 @@ body::-webkit-scrollbar {
     scroll-behavior: smooth;
 }
 
+*::-webkit-scrollbar {
+    display: none !important;
+}
+
 ion-icon {
     --ionicon-stroke-width: 16px;
+}
+
+.blue-btn {
+    padding: 0.3rem 0.7rem;
+    margin: 0.1rem;
+    color: var(--color);
+    background-color: var(--gray);
+    border: none;
+    border-radius: 2px;
 }
