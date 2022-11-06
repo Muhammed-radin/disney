@@ -1,10 +1,25 @@
 :root {
+    --background-color: rgb(5, 16, 58);
+    --color: #fff;
+    --hovercolor: rgb(197, 197, 197);
+    --lightblue: rgb(75, 207, 238);
+    --darkblue: rgb(13, 32, 117);
+    --gray: #aaaaaa50;
+    --yellow: rgb(236, 173, 0);
+}
+
+/* darkblue: rgb(25, 69, 107) */
+/* 
+
+orginal color format
+
+:root {
     --background-color: rgb(13, 32, 117);
     --color: #fff;
     --hovercolor: rgb(197, 197, 197);
     --lightblue: rgb(75, 207, 238);
     --darkblue: rgb(5, 16, 58);
     --gray: #aaaaaa50;
+    --yellow: rgb(236, 173, 0);
 }
-
-/* darkblue: rgb(25, 69, 107) */
+*/

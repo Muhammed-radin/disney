@@ -53,11 +53,40 @@ ion-icon {
     --ionicon-stroke-width: 16px;
 }
 
-.blue-btn {
+.btn {
     padding: 0.3rem 0.7rem;
     margin: 0.1rem;
     color: var(--color);
     background-color: var(--gray);
     border: none;
     border-radius: 2px;
+    transition: 0.3s;
+}
+
+.btn ion-icon {
+    margin-right: 0.3rem !important;
+}
+
+.btn:hover {
+    transform: scale(1.02);
+}
+
+.blue-btn-hvr:hover {
+    /* background-color: var(--background-color) !important; */
+    background-color: var(--darkblue) !important;
+    color: var(--color) !important;
+}
+
+.yellow-btn-hvr:hover {
+    background-color: var(--yellow) !important;
+    color: var(--color) !important;
+}
+
+.blue-btn-hvr-color:hover {
+    /* color: var(--background-color) !important; */
+    color: var(--darkblue) !important;
+}
+
+.yellow-btn-hvr-color:hover {
+    color: var(--yellow) !important;
 }

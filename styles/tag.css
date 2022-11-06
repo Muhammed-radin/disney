@@ -21,7 +21,8 @@
     margin: 0.15rem;
     border-radius: 20px;
     cursor: pointer;
-    background: var(--darkblue);
+    /* background: var(--darkblue); */
+    background: var(--background-color);
     border: 1.5px solid #ffffff20;
     font-size: 15px;
     transition: 0.3s;

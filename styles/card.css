@@ -43,6 +43,8 @@
     margin: 0;
     margin-left: 1rem;
     width: 70%;
+    height: 60%;
+    overflow: hidden;
     /* width: max-content; */
 }
 
@@ -71,20 +73,35 @@
     scroll-behavior: smooth;
 }
 
+.main-thumb-btn {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+}
+
+.play-card-btn {
+    margin: 0.3rem !important;
+    padding: 0.3rem 1rem !important;
+    /* background: var(--darkblue) !important; */
+}
+
+/* .rate-card-btn {
+    background: transparent !important;
+} */
+
 .scroll-btn {
-    /* display: none; */
     opacity: 0;
     transition: 0.4s;
 }
 
 .item-list:hover .scroll-btn {
-    /* display: block; */
     opacity: 100%;
 }
 
 .loading {
     background: linear-gradient(145deg, #aaaaaa90, #aaaaaa30) !important;
     animation: loading 1s infinite;
+    box-shadow: 0 0 0 0;
 }
 
 @keyframes loading {
@@ -162,10 +179,13 @@
     border-radius: 10px;
 }
 
-
-@media  screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
     .thumb-details {
-        background: linear-gradient(to right, rgba(0, 0, 0, 0.99) 50%, #00000020);
+        background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.99) 50%,
+            #00000020
+        );
         position: absolute;
         left: 0;
         top: 0;
@@ -200,7 +220,11 @@
     }
 
     .thumb-details {
-        background: linear-gradient(to right, rgba(0, 0, 0, 0.99) 40%, #00000020);
+        background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.99) 40%,
+            #00000020
+        );
         position: absolute;
         left: 0;
         top: 0;
@@ -219,12 +243,12 @@
         margin: 0.8rem;
         font-size: 20px;
     }
-    
+
     .main-thumb-over {
         margin-left: 0.8rem;
         width: 80%;
         font-size: 14px;
         overflow: hidden;
-        height: 100px;
+        height: 99px;
     }
 }

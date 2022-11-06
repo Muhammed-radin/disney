@@ -77,14 +77,22 @@ async function startHome() {
     );
     var text = await url.json();
 
+    var rnd = Math.floor(Math.random() * 19);
+
+    $(".main-thumb").src = api.imgApi + text.results[rnd].backdrop_path;
+    $(".main-thumb-title").innerHTML = text.results[rnd].original_title
+        ? text.results[rnd].original_title
+        : text.results[rnd].name;
+    $(".main-thumb-over").innerHTML = text.results[rnd].overview;
+
     setInterval(function () {
         var rnd = Math.floor(Math.random() * 19);
         $(".main-thumb").src = api.imgApi + text.results[rnd].backdrop_path;
         $(".main-thumb-title").innerHTML = text.results[rnd].original_title
             ? text.results[rnd].original_title
-            : "NO_TITLE_FOUND";
+            : text.results[rnd].name;
         $(".main-thumb-over").innerHTML = text.results[rnd].overview;
-    }, 3000);
+    }, 10000);
 
     ///////////////////////////////////////////////
 
@@ -112,7 +120,9 @@ async function startHome() {
     );
 
     var res = await fetch(
-        "https://api.themoviedb.org/3/trending/all/day?api_key=" + api.auth + '&page=1'
+        "https://api.themoviedb.org/3/trending/all/day?api_key=" +
+            api.auth +
+            "&page=1"
     );
 
     var json = await res.json();
