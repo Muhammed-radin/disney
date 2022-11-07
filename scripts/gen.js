@@ -78,12 +78,38 @@ async function startHome() {
     var text = await url.json();
 
     var rnd = Math.floor(Math.random() * 19);
+    log(text);
 
     $(".main-thumb").src = api.imgApi + text.results[rnd].backdrop_path;
     $(".main-thumb-title").innerHTML = text.results[rnd].original_title
         ? text.results[rnd].original_title
         : text.results[rnd].name;
     $(".main-thumb-over").innerHTML = text.results[rnd].overview;
+    $(
+        ".rate-card-btn"
+    ).innerHTML = `<ion-icon name="star"></ion-icon> ${text.results[
+        rnd
+    ].vote_average.toFixed(1)}`;
+
+    var nowDt = new Date();
+    var today =
+        nowDt.getFullYear() +
+        "-" +
+        String(nowDt.getMonth() + 1).padStart(2, "0") +
+        "-" +
+        String(nowDt.getDate()).padStart(2, "0");
+
+    if (text.results[rnd].release_date < today) {
+        $(
+            ".upcoming-card-btn"
+        ).innerHTML = `<ion-icon name="calendar"></ion-icon>
+        ${text.results[rnd].release_date}`;
+    } else {
+        $(
+            ".upcoming-card-btn"
+        ).innerHTML = `<ion-icon name="arrow-up-outline"></ion-icon>
+        Upcoming`;
+    }
 
     setInterval(function () {
         var rnd = Math.floor(Math.random() * 19);
@@ -92,6 +118,23 @@ async function startHome() {
             ? text.results[rnd].original_title
             : text.results[rnd].name;
         $(".main-thumb-over").innerHTML = text.results[rnd].overview;
+        $(
+            ".rate-card-btn"
+        ).innerHTML = `<ion-icon name="star"></ion-icon> ${text.results[
+            rnd
+        ].vote_average.toFixed(1)}`;
+
+        if (text.results[rnd].release_date < today) {
+            $(
+                ".upcoming-card-btn"
+            ).innerHTML = `<ion-icon name="calendar"></ion-icon>
+            ${text.results[rnd].release_date}`;
+        } else {
+            $(
+                ".upcoming-card-btn"
+            ).innerHTML = `<ion-icon name="arrow-up-outline"></ion-icon>
+            Upcoming`;
+        }
     }, 10000);
 
     ///////////////////////////////////////////////
@@ -146,7 +189,6 @@ async function startHome() {
     var res = await fetch(des);
     var json = await res.json();
     var results = await json.results;
-    console.log(json);
 
     var cardCode = "";
 

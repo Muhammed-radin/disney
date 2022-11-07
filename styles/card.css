@@ -179,6 +179,16 @@
     border-radius: 10px;
 }
 
+@media screen and (min-width: 1500px) {
+    .thumb-card img {
+        position: absolute;
+        right: 0%;
+        top: 45%;
+        transform: translate(0%, -50%);
+        width: 60%;
+    }
+}
+
 @media screen and (max-width: 1000px) {
     .thumb-details {
         background: linear-gradient(
