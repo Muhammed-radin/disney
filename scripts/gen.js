@@ -139,13 +139,14 @@ async function startHome() {
 
     ///////////////////////////////////////////////
 
-    var des = api.discover.replace(
+    var des = api.now_play.replace(
         "page=2",
         "page=" + Math.floor(Math.random() * 10)
     );
     var res = await fetch(des);
     var json = await res.json();
     var results = await json.results;
+    console.log(results);
 
     var cardCode = "";
 
@@ -157,23 +158,23 @@ async function startHome() {
 
     ////////////////////////////////////////////////////
 
-    var des = api.discover.replace(
+    var des1 = api.discover.replace(
         "page=2",
         "page=" + Math.floor(Math.random() * 20)
     );
 
-    var res = await fetch(
+    var res1 = await fetch(
         "https://api.themoviedb.org/3/trending/all/day?api_key=" +
             api.auth +
             "&page=1"
     );
 
-    var json = await res.json();
-    var results = await json.results;
+    var json1 = await res1.json();
+    var results1 = await json1.results;
 
     var cardCode = "";
 
-    results.forEach(function (card1, i) {
+    results1.forEach(function (card1, i) {
         cardCode += card(api.imgApi + card1.poster_path);
 
         $$(".item-card-box")[1].innerHTML = cardCode;
@@ -181,18 +182,18 @@ async function startHome() {
 
     ////////////////////////////////////////////////////
 
-    var des = api.discover.replace(
+    var des2 = api.discover.replace(
         "page=2",
         "page=" + Math.floor(Math.random() * 30)
     );
 
-    var res = await fetch(des);
-    var json = await res.json();
-    var results = await json.results;
+    var res2 = await fetch(des);
+    var json2 = await res2.json();
+    var results2 = await json2.results;
 
     var cardCode = "";
 
-    results.forEach(function (card1, i) {
+    results2.forEach(function (card1, i) {
         cardCode += card(api.imgApi + card1.poster_path);
 
         $$(".item-card-box")[2].innerHTML = cardCode;
