@@ -22,9 +22,11 @@
 }
 
 .hover-box {
-    background: #aaaaaa;
-    width: 10px;
-    height: 10px;
+    width: 50px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .menu-box-icons {

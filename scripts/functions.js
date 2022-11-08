@@ -23,6 +23,10 @@ function oneTime(callback) {
     }
 }
 
+function goPage(href){
+    window.location.href = href
+}
+
 async function go() {
     // var url = await fetch(
     //     "https://api.themoviedb.org/3/trending/all/day?api_key=" +

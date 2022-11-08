@@ -1,8 +1,4 @@
 @import url("colors.css");
-@import url("navbar.css");
-@import url("card.css");
-@import url("tag.css");
-@import url("menubox.css");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap");
 
 body {
@@ -62,6 +58,7 @@ ion-icon {
     border: none;
     border-radius: 2px;
     transition: 0.3s;
+    outline: none;
 }
 
 .btn ion-icon {
