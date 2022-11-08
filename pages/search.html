@@ -24,11 +24,67 @@
             <input
                 type="text"
                 class="nav-input"
-                placeholder="Search Movies & Tv"
+                placeholder="Search Movies or Tv"
             />
             <button class="nav-btn"><ion-icon name="search"></ion-icon></button>
         </nav>
-        <div class="discover">
+        <div class="discover-box">
+            <div class="item-card loading">
+                <img
+                    src="https://archive.org/download/no-photo-available/no-photo-available.png"
+                    alt="item-thumb"
+                    class="item-card-thumb"
+                />
+            </div>
+            <div class="item-card loading">
+                <img
+                    src="https://archive.org/download/no-photo-available/no-photo-available.png"
+                    alt="item-thumb"
+                    class="item-card-thumb"
+                />
+            </div>
+            <div class="item-card loading">
+                <img
+                    src="https://archive.org/download/no-photo-available/no-photo-available.png"
+                    alt="item-thumb"
+                    class="item-card-thumb"
+                />
+            </div>
+            <div class="item-card loading">
+                <img
+                    src="https://archive.org/download/no-photo-available/no-photo-available.png"
+                    alt="item-thumb"
+                    class="item-card-thumb"
+                />
+            </div>
+            <div class="item-card loading">
+                <img
+                    src="https://archive.org/download/no-photo-available/no-photo-available.png"
+                    alt="item-thumb"
+                    class="item-card-thumb"
+                />
+            </div>
+            <div class="item-card loading">
+                <img
+                    src="https://archive.org/download/no-photo-available/no-photo-available.png"
+                    alt="item-thumb"
+                    class="item-card-thumb"
+                />
+            </div>
+            <div class="item-card loading">
+                <img
+                    src="https://archive.org/download/no-photo-available/no-photo-available.png"
+                    alt="item-thumb"
+                    class="item-card-thumb"
+                />
+            </div>
+            <div class="item-card loading">
+                <img
+                    src="https://archive.org/download/no-photo-available/no-photo-available.png"
+                    alt="item-thumb"
+                    class="item-card-thumb"
+                />
+            </div>
             <div class="item-card loading">
                 <img
                     src="https://archive.org/download/no-photo-available/no-photo-available.png"
@@ -40,4 +96,9 @@
     </body>
 
     <script src="../scripts/functions.js"></script>
+    <script src="../scripts/api/api.js"></script>
+    <script>
+        $(".discover-box").style.height = window.innerHeight - 50 + "px";
+    </script>
+    <script src="../scripts/search/discover.js"></script>
 </html>

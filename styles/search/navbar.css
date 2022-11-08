@@ -30,11 +30,33 @@ body * {
     border: 0;
     outline: none;
     border-radius: 2px;
-    width: 90%;
+    width: 95%;
     height: 35px;
     font-size: 15px;
 }
+
 .nav-btn ion-icon {
     font-size: 17px;
 }
 
+.discover-box {
+    padding: 0.2rem;
+    margin-top: 0.3rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    /* background: #ccc; */
+}
+
+.item-card {
+    margin: 0;
+    border-radius: 0;
+    padding: 0;
+}
+
+.item-card img {
+    border-radius: 0;
+}
