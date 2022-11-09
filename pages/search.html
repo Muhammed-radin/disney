@@ -25,8 +25,9 @@
                 type="text"
                 class="nav-input"
                 placeholder="Search Movies or Tv"
+                id="searchInput"
             />
-            <button class="nav-btn"><ion-icon name="search"></ion-icon></button>
+            <button class="nav-btn" onclick="window.location.search = document.getElementById('searchInput').value"><ion-icon name="search"></ion-icon></button>
         </nav>
         <div class="discover-box">
             <div class="item-card loading">
