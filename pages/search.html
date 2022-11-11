@@ -18,7 +18,7 @@
     </head>
     <body>
         <nav>
-            <button class="nav-btn nav-back" onclick="goPage('/')">
+            <button class="nav-btn nav-back" onclick="goPage('../')">
                 <ion-icon name="arrow-back-outline"></ion-icon>
             </button>
             <input
@@ -27,7 +27,13 @@
                 placeholder="Search Movies or Tv"
                 id="searchInput"
             />
-            <button class="nav-btn" onclick="window.location.search = document.getElementById('searchInput').value"><ion-icon name="search"></ion-icon></button>
+            <button
+                class="nav-btn search-btn"
+                onclick="window.location.search =
+            'search=' + document.getElementById('searchInput').value;"
+            >
+                <ion-icon name="search"></ion-icon>
+            </button>
         </nav>
         <div class="discover-box">
             <div class="item-card loading">
@@ -92,6 +98,30 @@
                     alt="item-thumb"
                     class="item-card-thumb"
                 />
+            </div>
+        </div>
+        <div class="hover-box">
+            <div class="menu-box">
+                <div class="menu-box-icons">
+                    <div class="menu-icon">
+                        <ion-icon name="home"></ion-icon>
+                    </div>
+                    <div class="menu-icon">
+                        <ion-icon
+                            name="search"
+                            onclick="goPage('pages/search.html')"
+                        ></ion-icon>
+                    </div>
+                    <!-- <div class="menu-icon">
+                    <ion-icon name="add-outline"></ion-icon>
+                </div> -->
+                    <div class="menu-icon">
+                        <ion-icon name="cog"></ion-icon>
+                    </div>
+                    <div class="menu-icon">
+                        <ion-icon name="person"></ion-icon>
+                    </div>
+                </div>
             </div>
         </div>
     </body>

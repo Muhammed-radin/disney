@@ -23,6 +23,10 @@ function oneTime(callback) {
     }
 }
 
+function calcplus(i, plus){
+    return i + plus;
+}
+
 function goPage(href){
     window.location.href = href
 }

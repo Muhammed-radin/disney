@@ -99,19 +99,25 @@
 }
 
 .loading {
-    background: linear-gradient(145deg, #aaaaaa90, #aaaaaa30) !important;
+    background: linear-gradient(145deg, #aaaaaa90 20%, #aaaaaa30 70%) !important;
     animation: loading 1s infinite;
+    background-size: 300px !important;
     box-shadow: 0 0 0 0;
 }
 
 @keyframes loading {
-    0% {
-        background-position-x: 0;
+    /* 0% {
+        opacity: 100%;
+    }
+    50% {
+        opacity: 50%;
     }
     100% {
-        background-position-x: 100px;
-    }
+        opacity: 100%;
+    } */
 }
+
+
 .loading * {
     visibility: hidden;
 }
@@ -270,4 +276,14 @@
         overflow: hidden;
         height: 99px;
     }
+}
+
+.not-found {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    flex-direction: column;
+    text-align: center;
 }

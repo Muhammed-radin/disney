@@ -75,26 +75,31 @@ async function search(loadCount) {
 
 document.getElementById("searchInput").onkeyup = (e) => {
     if (e.keyCode == 13) {
-        window.location.search = document.getElementById("searchInput").value;
+        document.getElementById("searchInput").readonly = true;
+        document.getElementById("searchInput").disabled = true;
+        setTimeout(function () {
+            window.location.search =
+                "search=" + document.getElementById("searchInput").value;
+        }, 500);
     }
 };
 
-function getName() {
-    var hash = window.location.href.indexOf("?") + 1;
+function getSearchName() {
+    var hash = window.location.href.indexOf("?search=") + 8;
     str = "";
 
     for (i = hash; i < window.location.href.length; i++) {
         str += window.location.href[i];
     }
 
-    if (hash == 0 || hash == -1) {
+    if (hash == 0 || hash == -1 || hash == 7) {
         str = undefined;
     }
 
     return str;
 }
 
-log(getName());
+log(getSearchName());
 
 async function go(loadCount, val) {
     var cardCode = "";
@@ -110,7 +115,7 @@ async function go(loadCount, val) {
         document.getElementById("searchInput").value == null ||
         document.getElementById("searchInput").value == false
     ) {
-        str = getName() ? getName() : startDiscover(2);
+        str = getSearchName() ? getSearchName() : startDiscover(2);
         document.getElementById("searchInput").value =
             typeof str == "string" ? str.replaceAll("%20", " ") : null;
     } else {
@@ -133,17 +138,42 @@ async function go(loadCount, val) {
         var res = await fetch(randomDiscover);
         var json = await res.json();
         var results = json.results;
+        console.log(json, json.total_results);
 
         results.forEach(function (cardes, i) {
             cardCode += card(api.imgApi + cardes.poster_path);
-            $(".discover-box").innerHTML = cardCode;
 
+            if (results.length == calcplus(i, 1)) {
+                
+            }
+
+            
             $$(".item-thumb").forEach(function (img, index) {
                 img.onerror = function () {
                     img.parentElement.style.display = "none";
                 };
             });
+
+            $(".discover-box").innerHTML = cardCode;
         });
+
+        if (json.total_results == 0) {
+            $(".discover-box").innerHTML = `
+            <div class="not-found">
+                <img src="../images/sammy-man-trying-to-find-the-right-document.png" alt="not_found_404">
+                <p><b> no result found in "${getSearchName()}" </b></p>
+            </div>
+            `;
+        }
+
+        if (window.navigator.onLine != true) {
+            $(".discover-box").innerHTML = `
+            <div class="not-found">
+                <img src="../images/sammy-man-trying-to-find-the-right-document.png" alt="not_found_404">
+                <p><b> no result found in "${getSearchName()}" </b></p>
+            </div>
+            `;
+        }
 
         log(results);
     }
@@ -153,7 +183,7 @@ setInterval(function () {
     if (
         $(".discover-box").innerHTML == false ||
         $(".discover-box").innerHTML == undefined ||
-        $(".discover-box").innerHTML == null 
+        $(".discover-box").innerHTML == null
         // document.querySelector(".discover-box").querySelector(".item-card")
     ) {
         console.log("invaild search");
